@@ -1,49 +1,98 @@
 /**
- * Parallax Scrolling Tutorial
- * For Smashing Magazine
- * July 2011
- *  
- * Author: Richard Shepherd
- *		   www.richardshepherd.com
- * 		   @richardshepherd   
+ * Initial stylesheet for L&P website
+ * Author: Jasdeep Garcha (@jasgarch)
+ *
+ * Functional design based on Parallax Scrolling Tutorial by Smashing Magazing
  */
 
+@font-face {font-family:Verlag; src: url(../fonts/VerlagCond-Black.otf);}
+@font-face {font-family:Verlag-Light; src: url(../fonts/Verlag-Light.otf);}
+@font-face {font-family:Verlag-Black; src: url(../fonts/Verlag-Black.otf);}
+@font-face {font-family:Verlag-Bold; src: url(../fonts/Verlag-Bold.otf);}
+/*@font-face {font-family:Verlag-Book; src: url(../fonts/Verlag-Book.otf);}*/
 
-article h2 { font-family: 'Lobster Two'; font-size: 60px; margin: 25px 0; line-height: 1em; }
 
-.story { height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.3); border-bottom: 1px solid rgba(0,0,0,0.4); box-shadow: 0 0 50px rgba(0,0,0,0.8);}
+@font-face {
+  font-family: 'Verlag-Black';
+  src: url('../fonts/Verlag-Black.eot?') format('eot'), url('../fonts/Verlag-Black.otf') format('otf'), url('../fonts/Verlag-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Verlag-Bold';
+  src: url('../fonts/Verlag-Bold.eot?') format('eot'), url('../fonts/Verlag-Bold.otf') format('otf'), url('../fonts/Verlag-Bold.ttf') format('truetype');
+}
+/*@font-face {
+  font-family: 'Verlag-Book';
+  src: url('../fonts/Verlag-Book.eot?') format('eot'), url('../fonts/Verlag-Book.otf') format('otf'), url('../fonts/Verlag-Book.ttf') format('truetype');
+}*/
 
-#first { background: url(../images/puckered.png) 50% 0 no-repeat fixed; }
-#second { background: url(../images/slide2.jpg) 50% 0 no-repeat fixed; }
-#fourth { background: url(../images/slide3.jpg) 50% 0 no-repeat fixed; }
-#third { background: url(../images/slide4.jpg) 50% 0 no-repeat fixed; }
-#theend { background: url(../images/puckered.png) 50% bottom no-repeat fixed; }
+@font-face {
+ font-family: Verlag-Book;
+ src: url("../fonts/Verlag-Book.eot") /* EOT file for IE */
+}
+@font-face {
+ font-family: Verlag-Book;
+ src: url("../fonts/Verlag-Book.otf") /* TTF file for CSS3 browsers */
+}
+
+article h2 { font-family: 'Courier'; font-size: 60px; margin: 25px 0; line-height: 1em; }
+
+#nav {position:fixed;display:none;top:0px;z-index:15;height:60px;width:100%;background-color:rgb(241,100,100);box-shadow: 1px 1px 7px #707070;}
+#nav #nav-items { padding-top: 0.5%; display:table; margin: 0 auto;}
+#nav #nav-items ul { letter-spacing: 3px; margin: 0;font-family:'Verlag-Black';font-size:40px;line-height:1.7em;list-style-type:none;text-align:center;}
+#nav #nav-items li {display:inline;}
+#nav #nav-items a {color: rgb(246,236,215); text-decoration: none;}
+#nav #nav-items a:hover {text-decoration: none; color: white; }
+#social {position:fixed;right:1.5%;top:2.8%;display:none;float:right;}
+#social img {padding-right:4px;}
+
+.story { height: 95%; padding: 0; margin: 0; width: 100%; max-width: 2600px; position: relative; margin: 0 auto; border-top: 1px solid rgba(255,255,255,0.3); border-bottom: 0px solid rgba(0,0,0,0.4);}
+.location { font-size: 40px; line-height: 2.5em; height: 100px; padding: 0; margin: 0; width: 100%; max-width: 2600px; position: relative; margin: 0 auto; border-top: 0px solid rgba(255,255,255,0.3); border-bottom: 0px solid rgba(0,0,0,0.4);}
+.content-contain { letter-spacing: 2px; margin-left: 4%; margin-top:7%; width: 70%; height: 55%; font-family:'Verlag-Bold'; font-size:35px; color:rgb(181,152,90); font-size:60px;}
+.content-contain .sub-content { margin-top:2%;font-size:20px; color:rgb(159,159,159);}
+.content-contain .sub-content p { margin-top:1%; }
+.content-contain .sub-content a { text-decoration: none; color:rgb(181,152,90) ;}
+.content-contain .sub-content a:hover { text-decoration: none; color:rgb(181,152,90); text-decoration: underline;}
+.about { margin-top:12%;}
+.stamp {display:none;z-index:20;position:fixed;margin-left:50%;margin-right:50%;bottom:10px;left:-25px;}
+.stamp img.resize {width:100px;height:auto;}
+
+#first { background-color: #F69472;}/*background: url(../images/layers/chocolate.jpg) 50% 0 no-repeat fixed; }*/
+#second { background: url(../images/layers/pieces.png) 100% 0 no-repeat fixed; background-size:155%;}
+#third { background: url(../images/layers/popcorn.jpg) 100% 0 no-repeat fixed; background-size:155%;}
+#fourth { cursor: pointer; background: url(../images/layers/vid_image.jpg) 100% 0 no-repeat scroll; background-size:100%;}
+#loc-first { cursor: pointer; background-color: #D4ADD1; }
+#loc-second { cursor: pointer; background-color: #A2D8CB; }
+
+/* Maps */
+#okc_map {height:300px; position: relative; width: 100%; display:none;}
+#okc_map #okc_map_canvas {width: 100%;height:auto;position: absolute;} 
+#tulsa_map {height:300px; position:relative; width: 100%; display:none;}
+#tulsa_map #tulsa_map_canvas {width: 100%;height:auto;position: absolute;}
+.store-detail {font-family: 'Verlag-Book'; background: url(../images/layers/store.png) 50% 0 no-repeat; background-size:80%;position:absolute;top: 20%;left: 5%;height: auto;width: 25%;z-index: 10;}
+.store-city {font-family: 'Verlag-Black'; color: rgb(246,236,215); padding-left:2%;}
+.store-address{font-family: 'Verlag-Book'; color: rgb(246,236,215); }
+.expand {position:absolute; font-family:'Verlag-Black';top:8%;right:3%;cursor:pointer;}
+.rect-filler {height:5px;width:100%;display:none;background:#A2D8CB;}
 
 /* Introduction */
 #first .smashinglogo { background: url(../images/smashing-logo.png) 50% 100px no-repeat fixed; min-height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; }
-#first article { width: 100%; top: 300px; position: absolute; text-align: center; }
-#first article p,
-#first article a { color: #ccc; }
-#first article a { text-decoration: underline; }
-#first article a:hover { color: #fff; }
+#first .intro-wrap { width: 100%; height:100%; top: 0px; position: absolute; text-align: center; background: url(../images/layers/wrap.png) 50% 0 no-repeat fixed;}
+#first .intro-wrap img {padding-top:15%;}
+#first .intro-wrap p,
+#first .intro-wrap a { color: #ccc; }
+#first .intro-wrap a { text-decoration: underline; }
+#first .intro-wrap a:hover { color: #fff; }
+#first img { position: relative; margin-top: 20% ; margin-left: 50% ;}
 
-/* Background Only */
-#second { padding: 50px 0;}
-#second article { background: url(../images/grain.png) repeat #333; color: #fff; width: 445px; margin-left: 100px; padding: 10px 20px; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); }
-#second article p { margin-bottom: 25px; }
-#second article a { color: #ff0;}
+.lp-vid {height:auto;width:100%;display:none;}
+#vid {position:relative;width:100%;height:auto;background: url(../images/layers/chalkboard.png) no-repeat fixed;}
 
-/* Photograph */
-#third article {  background: url(../images/grain.png) repeat #333; color: #fff; padding: 10px 20px; margin: 100px 0 0 60%; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; color: #fff; position: absolute; top: 0; box-shadow: 0 0 25px rgba(0,0,0,0.3); border: 1px solid rgba(150,150,150,0.1); }
-#third .photograph { background: url(../images/photo.png) transparent 40% 100px no-repeat fixed; min-height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; }
-#third article p { width: 300px; margin-bottom: 25px; }
+#vid-info {margin-left:50%; margin-top: 50%; position:absolute;letter-spacing:2px;font-family:'Verlag-Black';font-size:20px;color:rgb(181,152,90);}
 
-/* HTML5 Video */
-#fourth article {  margin-left: 10%; text-shadow: 0 -1px 0 rgba(0,0,0,0.5); line-height: 1.5em; color: #fff; position: absolute; top: 0; }
-#fourth article p { width: 300px; margin: 50px 0; }
-#fourth video { position: fixed; left: 50%; box-shadow: 0 0 25px rgba(0,0,0,0.7); z-index: 1;}
+#fourth img {}/*width:55%;}/*position:absolute; margin-top:50%; margin-left:50%;}*/
+#movie-text {}
 
-/* The End */
-#theend .byebye { background: url(../images/theend.png) 40% 100px no-repeat fixed; height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; }
+a.rollover {}
 
-
+a.rollover img {
+}

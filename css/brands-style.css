@@ -1,0 +1,13 @@
+@font-face {font-family:Verlag; src: url(../fonts/VerlagCond-Black.otf);}
+
+body {margin:0; background: url(../images/layers/mason.jpg) no-repeat fixed; background-size:100%;}
+
+/* Brands */
+#float-brands { height:600px; width:90%; background-color:black; opacity:.7;
+	position:relative;
+	left: 5%;
+	right: 5%;
+	top:5%;
+	bottom: 5%;}
+
+#brands-title {padding-left:2%;font-family:'Verlag';font-size:60px; color:rgb(181,152,90); opacity:1;}

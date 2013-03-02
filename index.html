@@ -1,85 +1,165 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
+
+	<meta name="Description" content="Lolli and Pops is a small collection of candy stores with a simple goal: to make every day delicious.">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Parallax Scrolling Tutorial</title>
-  <meta name="description" content="How to create a parallax scrolling effect with jQuery, HTML and CSS">
-  <meta name="author" content="Richard Shepherd, Smashing Magazine">
+  <title>Lolli and Pops - Purveyors of Sweetness</title>
 
-  <!-- Mmmmm, Google Web Fonts. That's a paddlin'. -->
   <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700&v2' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-37327792-3']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+  </script>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEhQWJGizNVn218SR6t6rc2qsCta_z0Tg&sensor=false">
+  </script>
+  <!-- Google maps JS -->
+  <script type="text/javascript">
+	function initialize() {
+		var myLatlng = new google.maps.LatLng(35.524737, -97.543966);
+		var myLatlng2 = new google.maps.LatLng(36.059539, -95.886102);
+
+        var mapOptions = {
+          center: myLatlng,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+        };
+        var mapOptions2 = {
+          center: myLatlng2,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+        };
+        var map = new google.maps.Map(document.getElementById("okc_map_canvas"),
+            mapOptions);
+
+        var marker = new google.maps.Marker({
+		    position: myLatlng,
+		    map: map,
+		    title:"Lolli and Pops - OKC"
+		});
+
+        var map2 = new google.maps.Map(document.getElementById('tulsa_map_canvas'), 
+        	mapOptions2);
+
+        var marker2 = new google.maps.Marker({
+		    position: myLatlng2,
+		    map: map2,
+		    title:"Lolli and Pops - Tulsa"
+		});
+      }
+    </script>
+    <script type="text/javascript">
+    	function initial_resize (){
+			$('.lp-vid').css('height', $('.story').css('height'));
+			$('#vid-info img').css('margin-left', 0+'px')
+			$('#vid-info').css('left', '-'+$('#movie-text').width()/2+'px')
+			$('#vid-info').css('top', '-'+($('#fourth img').height())/2+'px')
+		}
+	</script>
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.js"></script>
+	<![endif]-->
 </head>
 
-<body>
+<body onload='initial_resize()'>
+
+	<div id='nav'>
+		<div id='nav-items'>
+			<ul>
+				<li><a href="#second" onClick="$('html, body').animate({ scrollTop: $('#second').offset().top}, 500)">ABOUT</a></li>
+				<li><a href="#loc-first" onClick="$('html, body').animate({ scrollTop: $('#loc-first').offset().top-60}, 500)">STORES</a></li>
+				<li><a href="#third" onClick="$('html, body').animate({ scrollTop: $('#third').offset().top}, 500)">SWEETS</a></li>
+				<li><a href="#fourth" onClick="$('html, body').animate({ scrollTop: $('#fourth').offset().top}, 500)">SHORT</a></li>
+			</ul>
+		</div>
+		<div id='social'>
+			<a href=""><img src="images/layers/twitter.png"></a>
+			<a href="https://www.facebook.com/LolliandPops" target='_blank'><img src="images/layers/facebook.png"></a>
+		</div>
+	</div>
+
+	<div class='stamp'><img src="images/layers/stamp.png" width='75' height='75'/></div>
 
   <div id="main" role="main">
 
 	<!-- Section #1 / Intro -->
-	<section id="first" class="story" data-speed="8" data-type="background">    	
-		<div class="smashinglogo" data-type="sprite" data-offsetY="100" data-Xposition="50%" data-speed="-2"></div>		
-		<article>
-
-			<img src="images/tutorial-title.png" alt="tutorial-title" width="711" height="242" />
-			<p>Words and pictures by Richard Shepherd / Twitter: <a href="http://twitter.com/richardshepherd" target="_blank">@richardshepherd</a> / Web: <a href="http://richardshepherd.com">richardshepherd.com</a></p>
-			<p>GitHub: <a href="https://github.com/richardshepherd/Parallax-Scrolling/">Fork it here!</a></p>
-	    </article>
+	<section id="first" class="story" data-speed="8" data-type="background">   
+			<img src="images/layers/logo_white.png" alt="tutorial-title" width="500" height="135" />
 	</section>
 
 	<!-- Section #2 / Background Only -->
-	<section id="second" class="story" data-speed="4" data-type="background">
-		<article>
-			<h2>Background Only</h2>
-		    	<p>In this section we are sliding the background at a different speed to the rest of the page.</p>
-		    	<p>As this text box is scrolling at the same speed as the page, and faster than the background, it creates this lovely parallax effect.</p>
-		    	<p>You can find all the HTML, CSS and the all important JavaScript files over at <a href="https://github.com/richardshepherd/Parallax-Scrolling">GitHub</a> - so why don't you drop by for some hardcore forking action?</p>
-		    	<p>Backgrounds for this article were taken from the May/June 2011 Smashing Magazine Desktop backgrounds.</p>	
-		    	<p>Head back to <a href="http://coding.smashingmagazine.com/2011/07/12/behind-the-scenes-of-nike-better-world/">Smashing Magazine</a>, or hop on over to <a href="http://richardshepherd.com">RichardShepherd.com</a>.</p>		
-		</article>
+	<section id="second" class="story" data-speed="4" data-type="background" data-offsetY="0">
+		<div class='content-contain about'>
+			<p>Lolli and Pops is </p>
+			<p>a small collection </p>
+			<p>of candy stores </p>
+			<p>with a simple goal: </p>
+			<p>to make every day delicious.</p>
+		</div>
+	</section>
+
+	<!-- Section #3 / Location Only -->
+	<section id="loc-first" class="location" data-speed="4" data-type="background">
+			<span class='store-city'>TULSA </span><span class='store-address'>WOODLAND HILLS MALL 7201 South Memorial Drive (near food court) | 918-250-9916</span>
+			<span class='expand'><img src="images/layers/buttonv2.png" width='50' height='50'></span>
+	</section>
+
+	<div id='tulsa_map'><div class='store-detail'></div><div id='tulsa_map_canvas' style="width: 100%; height: 100%"></div></div>
+
+
+	<!-- Section #4 / Location Only -->
+	<section id="loc-second" class="location" data-speed="4" data-type="background">
+			<span class='store-city'>OKLAHOMA CITY </span><span class='store-address'>PENN SQUARE MALL 1901 Northwest Expy | 405-848-3300</span>
+			<span class='expand'><img src="images/layers/buttonv1.png" width='50' height='50'></span>
 	</section>
 	
-	<!-- Section #3 / Photos -->
-	<section id="third" class="story" data-speed="6" data-type="background" data-offsetY="250">    	
-		<div class="photograph" data-type="sprite" data-offsetY="1250" data-Xposition="25%" data-speed="2"></div>
-    	<article>
-    		<h2>Scrolling Sprites</h2>
-	    	<div class="textbox">    	
-		    	<p>The next step in your parallax scrolling adventure is to create some sprites!</p>
-		    	<p>I have cut out one of the photos in this background and use it as a sprite. It scrolls at a different speed to the background <i>and</i> the window, and it's this effect that's used so well on Nike Better World and other parallax sites..</p>
-		    	<p>Using too many sprites can slow down older computers, and you need to use some clever maths (and trial & error!) to work out their placement on the page.</p>
-		    </div>
-    	</article>
+	<div id='okc_map'><div class='store-detail'></div><div id='okc_map_canvas' style="width: 100%; height: 100%"></div></div>
+	<div class='rect-filler'></div>
+
+	<!-- Section #5 / Brands section -->
+	<section id="third" class="story" data-speed="4" data-type="background" data-offsetY="295">    	
+		<div class='content-contain'>
+			<p>We're purveyors of sweetness, </p>
+			<p>which means we carry the </p>
+			<p>most delectable selection </p>
+			<p>of candies and confections </p>
+			<p>in the whole wide world. </p>
+			<div class='sub-content'>HERE ARE JUST SOME OF OUR BRANDS:
+				<p>Kopper's, Albanese, Fran's Chocolate, Ritual Chocolate, TCHO,</p>
+				<p>Vosges, Recchuiti, Divine Delights (Petits fours), Sweet Shop,</p>
+				<p>Cadbury, Chocolate, Santander, Reber, Asher's, Jcoco, Hachez,</p>
+				<p>Meiji, Pernigotti, Scharffen Berger, and many more.</p>
+			</div>
+		</div>
 	</section>	
 	
-
-	<!-- Section #4 / HTML5 Video -->
-	<section id="fourth" class="story" data-speed="8" data-type="background" data-offsetY="250">
-    	<article>
-    		<h2>HTML5 Video</h2>
-	    	<div class="textbox">    	
-		    	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-		    	<p>Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-		    	<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. o.</p>
-		    </div>
-    	</article>
-		<video controls width="640" width="480" data-type="video" data-offsetY="2400" data-speed="1.5">
-			<source src="video/parallelparking.theora.ogv" type="video/ogg" />
-			<source src="video/parallelparking.mp4" type="video/mp4" />
-			<source src="video/parallelparking.webm" type="video/webm" />
-		</video>
-	</section>	
-
-	<!-- Section #5 / The End-->
-	<section id="theend" class="story" data-speed="8" data-type="background" data-offsetY="250">    	
-		<div class="byebye" data-type="sprite" data-offsetY="-1600" data-Xposition="50%" data-speed="-2"></div>	
+	<!-- Section #6 / Publicity Video -->
+	<section id="fourth" class="story">
+			<!--<div id='vid-info'>
+				<a href="#fourth" class='rollover'><img src="images/layers/vid.png" width='40%' height='auto'></a>
+				<br>
+				<br>
+				<span id='movie-text'>CLICK TO WATCH OUR STORY!</span>
+			</div>-->
+		<img src="images/layers/vid_image.png" width='100%' height='auto'>
+		<iframe src="http://player.vimeo.com/video/45144457" class='lp-vid' frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 	</section>
-	
-  </div> <!-- // End of #main -->
-
-
 
   <!-- Our Javascript, starting with jQuery -->
   <script src='js/libs/jquery-1.6.1.min.js'></script>
