@@ -136,12 +136,44 @@ $(document).ready(function(){
 			// adjust text size
 		$('.content-contain').css('font-size', (window_width/22) + 'px');
 		$('.content-contain .sub-content').css('font-size', (window_width*.015)+'px')
+
+		//mobile adjustments
+		$('.small-story').css('font-size', (window_width*.049396268)+'px')
 	}
 
 	/*************************************
 	* EVENT BLOCK
 	* events for various actions and components
 	**************************************/
+
+	//small site
+	$('#about').click(function(){
+		$('#about-desc').animate({
+		    height: 'toggle'
+		  }, 10, function() {
+		    // Animation complete.
+		    $('.small-story #stores-desc').hide();
+		   	$('.small-story #sweets-desc').hide();
+		  });
+	})
+	$('#stores').click(function(){
+		$('#stores-desc').animate({
+		    height: 'toggle'
+		  }, 10, function() {
+		    // Animation complete.
+		    $('.small-story #about-desc').hide();
+		   	$('.small-story #sweets-desc').hide();
+		  });
+	})
+	$('#sweets').click(function(){
+		$('#sweets-desc').animate({
+		    height: 'toggle'
+		  }, 10, function() {
+		    // Animation complete.
+		    $('.small-story #about-desc').hide();
+		   	$('.small-story #stores-desc').hide();
+		  });
+	})
 
 	// animate store location panels
 	$('#loc-second').click(function(){

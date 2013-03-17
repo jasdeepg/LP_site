@@ -11,6 +11,12 @@
   <link href='http://fonts.googleapis.com/css?family=Lobster+Two:700&v2' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+
+   <link rel="stylesheet" href="css/normalize.css">
+   <link rel="stylesheet" href="css/foundation.css">
+   <script src="js/vendor/custom.modernizr.js"></script>
+
+
   <script type="text/javascript">
 
 	  var _gaq = _gaq || [];
@@ -70,6 +76,17 @@
 			$('#vid-info img').css('margin-left', 0+'px')
 			$('#vid-info').css('left', '-'+$('#movie-text').width()/2+'px')
 			$('#vid-info').css('top', '-'+($('#fourth img').height())/2+'px')
+
+			var window_width = $(window).width();
+
+			// panel classes
+				// change panel heights
+			$('.story').css('height', (window_width*.5078125)+'px')
+				// set image width
+			$('.story').css('background-size', window_width+window_width/3);
+				// adjust text size
+			$('.content-contain').css('font-size', (window_width/22) + 'px');
+			$('.content-contain .sub-content').css('font-size', (window_width*.015)+'px')
 		}
 	</script>
 	<!--[if lt IE 9]>
@@ -79,6 +96,53 @@
 
 <body onload='initial_resize()'>
 
+	<div class='show-for-portrait small-body'>
+		<div class='row'>
+			<div id='logo' class='small-block-grid-2'>
+				<img src="images/layers/stamp.png">
+			</div>
+			<div id='about' class='nav-item small-12 columns'>
+				ABOUT
+			</div>
+			<div id='about-desc' class="small-12 columns small-story">   
+				<p>Lolli and Pops is a small collection of candy stores. Our first location opened in 2012 with a simple goal: to make every day delicious.</p>
+			</div>
+			<div id='stores' class='nav-item small-12 columns'>
+				STORES
+			</div>
+			<div id='stores-desc' class='small-12 columns small-story'>
+				<ul>
+					Lolli and Pops - Tulsa
+					<li>Woodland Hills Mall</li>
+					<li>7201 South Memorial Drive</li>
+					<li>918-250-9916</li>
+				</ul>
+				<ul>
+					Lolli and Pops - Oklahoma City
+					<li>Penn Square Mall</li>
+					<li>1901 Northwest Expy</li>
+					<li>405-848-3300</li>
+				</ul>			
+			</div>
+			<div id='sweets' class='nav-item small-12 columns'>
+				SWEETS
+			</div>
+			<div id='sweets-desc' class='small-12 columns small-story'>
+				Some of our brands:
+				<ul>
+					<li>Kopper's, Albanese, Fran's,</li>
+					<li>Ritual Chocolate, TCHO,</li>
+					<li>Vosges, Recchuiti, Divine Delights,</li>
+					<li>Sweet Shop, Cadbury, Chocolate, </li>
+					<li>Santander, Reber, Asher's, Jcoco, </li>
+					<li>Hachez, Meiji, Pernigotti, </li>
+					<li>Scharffen Berger, and many more.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<div class='big-body hide-for-portrait'>
 	<div id='nav'>
 		<div id='nav-items'>
 			<ul>
@@ -94,9 +158,7 @@
 		</div>
 	</div>
 
-	<div class='stamp'><img src="images/layers/stamp.png" width='75' height='75'/></div>
-
-  <div id="main" role="main">
+	<div class='stamp'><img src="images/layers/stamp.png"/></div>
 
 	<!-- Section #1 / Intro -->
 	<section id="first" class="story" data-speed="8" data-type="background">   
@@ -157,9 +219,10 @@
 				<br>
 				<span id='movie-text'>CLICK TO WATCH OUR STORY!</span>
 			</div>-->
-		<img src="images/layers/vid_image.png" width='100%' height='auto'>
+		<img src="images/layers/vid_image.png" width='100%' height='auto' onClick="_gaq.push(['_trackEvent', 'Videos', 'Play', 'LP story video']);">
 		<iframe src="http://player.vimeo.com/video/45144457" class='lp-vid' frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 	</section>
+</div>
 
   <!-- Our Javascript, starting with jQuery -->
   <script src='js/libs/jquery-1.6.1.min.js'></script>
@@ -168,6 +231,19 @@
     <script src="js/libs/dd_belatedpng.js"></script>
     <script>DD_belatedPNG.fix("img, .png_bg");
   <![endif]-->
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+  '.js><\/script>')
+  </script><script src="js/vendor/zepto.js"></script>
+  
+  <script src="js/foundation.min.js"></script>
+
+  <script>
+    $(document).foundation();
+  </script>
+
 
 </body>
 </html>

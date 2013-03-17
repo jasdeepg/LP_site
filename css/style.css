@@ -53,13 +53,13 @@ article h2 { font-family: 'Courier'; font-size: 60px; margin: 25px 0; line-heigh
 .content-contain .sub-content a { text-decoration: none; color:rgb(181,152,90) ;}
 .content-contain .sub-content a:hover { text-decoration: none; color:rgb(181,152,90); text-decoration: underline;}
 .about { margin-top:12%;}
-.stamp {display:none;z-index:20;position:fixed;margin-left:50%;margin-right:50%;bottom:10px;left:-25px;}
-.stamp img.resize {width:100px;height:auto;}
+.stamp { display:none;z-index:20;position:fixed;margin-left:50%;margin-right:50%;bottom:10px;left:-25px;}
+/*.stamp img.resize {width:100px;height:auto;}*/
 
 #first { background-color: #F69472;}/*background: url(../images/layers/chocolate.jpg) 50% 0 no-repeat fixed; }*/
 #second { background: url(../images/layers/pieces.png) 100% 0 no-repeat fixed; background-size:155%;}
 #third { background: url(../images/layers/popcorn.jpg) 100% 0 no-repeat fixed; background-size:155%;}
-#fourth { cursor: pointer; background: url(../images/layers/vid_image.jpg) 100% 0 no-repeat scroll; background-size:100%;}
+#fourth { cursor: pointer; background: black; 100% 0 no-repeat scroll; background-size:100%;}
 #loc-first { cursor: pointer; background-color: #D4ADD1; }
 #loc-second { cursor: pointer; background-color: #A2D8CB; }
 
@@ -96,3 +96,22 @@ a.rollover {}
 
 a.rollover img {
 }
+
+/* mobile site */
+body {background-color: #F6ECD7;}
+.small-body {background-color: #F6ECD7;}
+
+.nav-item {text-align:center; font-family:'Verlag-Black'; font-size:45px; color: #F6ECD7; padding:15px; cursor:pointer;}
+#logo {background-color: #F6ECD7; }
+#logo img {padding-left:50%; position:relative; left:-77px; padding-top:10px; padding-bottom:10px;}
+#about {background-color: #FDBD3B; height:;}
+#stores {background-color: #A2D8CB}
+#sweets {background-color: #F26463}
+
+.small-story {font-family: 'Verlag-Bold'; font-size: 45px; padding: 50px; display:none; background-color: #F6ECD7;}
+#sweets-desc ul {list-style:none;}
+#sweets-desc li {font-family:'Verlag-Book';}
+#stores-desc li {padding-left:25px; font-family: 'Verlag-Book'}
+#stores-desc ul {list-style:none;}
+#about-desc	{font-family:'Verlag-Book';}
+
