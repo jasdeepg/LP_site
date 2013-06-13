@@ -223,6 +223,7 @@ $(document).ready(function(){
 			$('#social').fadeIn('slow').css('display', 'block');
 			if ($(window).scrollTop() < ($('#fourth').offset().top - $('#fourth').height())){
 				$('.stamp').fadeIn('slow').css('display', 'block');
+				$('.panel').fadeIn('slow').css('display', 'block')
 			}
 			if (!testDevice()){
 			clearTimeout(timeout);
@@ -239,6 +240,7 @@ $(document).ready(function(){
 		}
 		else if ($(window).scrollTop() > ($('#fourth').offset().top - $('#fourth').height())){
 			$('.stamp').fadeOut('slow');
+			$('.panel').fadeOut('slow');
 		}
 		else if ($(window).scrollTop() > $('#first').height()-75){
 			$('#nav').fadeIn('slow').css('display', 'block');
