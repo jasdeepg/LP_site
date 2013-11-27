@@ -23,6 +23,8 @@ $(document).ready(function(){
 	// store locations store components for jquery reference
 	$okc = $('#okc_map');
 	$tulsa = $('#tulsa_map');
+	$chicago = $('#chicago_map');
+	$roseville = $('#roseville_map');
 
 	// check if components have been adjusted for screen resolution
 	if (flag==0){	
@@ -69,7 +71,9 @@ $(document).ready(function(){
 			aspect_flag = true;
 			$('.story').css('width','100%');
 			$('#second').css('background-attachment','scroll');
-			$('#second').css('background-position', '25%')
+			$('#second').css('background-position', '25%');
+			$('#second-promo').css('background-attachment','scroll');
+			$('#second-promo').css('background-position','25%');
 			$('#third').css('background-attachment','scroll');
 			$('#third').css('background-position','25%');
 			$('#fourth').css('background-attachment','scroll');
@@ -80,6 +84,8 @@ $(document).ready(function(){
 			$('.story').css('width','100%');
 			$('#second').css('background-attachment','fixed');
 			$('#second').css('background-position', '100%')
+			$('#second-promo').css('background-attachment','fixed');
+			$('#second-promo').css('background-position','100%');
 			$('#third').css('background-attachment','fixed');
 			$('#third').css('background-position','100%');
 			$('#fourth').css('background-attachment','fixed');
@@ -135,10 +141,19 @@ $(document).ready(function(){
 		$('.story').css('background-size', window_width+window_width/3);
 			// adjust text size
 		$('.content-contain').css('font-size', (window_width/22) + 'px');
+		$('#second').css('font-size', (window_width/1280)*38.4);
+		$('#second p').css('line-height', (window_width/1280)*60+'px');
 		$('.content-contain .sub-content').css('font-size', (window_width*.015)+'px')
 
 		//mobile adjustments
 		$('.small-story').css('font-size', (window_width*.049396268)+'px')
+
+		//promo panel
+		$('#second-promo form').css('bottom', (window_width/1280)*5+'%');
+		$('#second-promo .banner-promo').css('width', (window_width/1280)*700+'px');
+		$('#second-promo .banner-promo').css('height', (window_width/1280)*80+'px');
+		$('#second-promo .banner-promo p').css('line-height', (window_width/1280)*60+'px');
+		$('#second-promo .banner-promo').css('font-size', (window_width/1280)*36.9+'px');
 	}
 
 	/*************************************
@@ -176,6 +191,32 @@ $(document).ready(function(){
 	})
 
 	// animate store location panels
+	$('#loc-fourth').click(function(){
+		$roseville.animate({
+		    height: 'toggle'
+		  }, 250, function() {
+		    // Animation complete.
+		    $('.rect-filler-roseville').show();
+		    $tulsa.hide();
+		    $okc.hide();
+		    $chicago.hide();
+		    initialize();
+		  });
+	})
+
+	$('#loc-third').click(function(){
+		$chicago.animate({
+		    height: 'toggle'
+		  }, 250, function() {
+		    // Animation complete.
+		    $('.rect-filler-chicago').show();
+		    $tulsa.hide();
+		    $okc.hide();
+		    $roseville.hide();
+		    initialize();
+		  });
+	})	
+
 	$('#loc-second').click(function(){
 		$okc.animate({
 		    height: 'toggle'
@@ -183,6 +224,8 @@ $(document).ready(function(){
 		    // Animation complete.
 		    $('.rect-filler').show();
 		    $tulsa.hide();
+		    $chicago.hide();
+		    $roseville.hide();
 		    initialize();
 		  });
 	})	
@@ -194,6 +237,8 @@ $(document).ready(function(){
 		    // Animation complete.
 		    $('.rect-filler').hide();
 		    $okc.hide();
+		    $chicago.hide();
+		    $roseville.hide();
 		    initialize();
 		});
 	})

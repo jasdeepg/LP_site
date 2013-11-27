@@ -36,11 +36,12 @@
   <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEhQWJGizNVn218SR6t6rc2qsCta_z0Tg&sensor=false">
   </script>
-  <!-- Google maps JS -->
   <script type="text/javascript">
 	function initialize() {
 		var myLatlng = new google.maps.LatLng(35.524737, -97.543966);
-		var myLatlng2 = new google.maps.LatLng(36.059539, -95.886102);
+		var myLatlng2 = new google.maps.LatLng(36.063098, -95.881269);
+		var myLatlng3 = new google.maps.LatLng(41.978890, -87.865723);
+		var myLatlng4 = new google.maps.LatLng(38.773442, -121.269285);
 
         var mapOptions = {
           center: myLatlng,
@@ -54,6 +55,19 @@
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           scrollwheel: false,
         };
+        var mapOptions3 = {
+          center: myLatlng3,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+        };
+        var mapOptions4 = {
+          center: myLatlng4,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+        };
+
         var map = new google.maps.Map(document.getElementById("okc_map_canvas"),
             mapOptions);
 
@@ -71,6 +85,25 @@
 		    map: map2,
 		    title:"Lolli and Pops - Tulsa"
 		});
+
+		var map3 = new google.maps.Map(document.getElementById('chicago_map_canvas'), 
+        	mapOptions3);
+
+        var marker3 = new google.maps.Marker({
+		    position: myLatlng3,
+		    map: map3,
+		    title:"Lolli and Pops - Chicago"
+		});
+
+		var map4 = new google.maps.Map(document.getElementById('roseville_map_canvas'), 
+        	mapOptions4);
+
+        var marker4 = new google.maps.Marker({
+		    position: myLatlng4,
+		    map: map4,
+		    title:"Lolli and Pops - Roseville"
+		});
+
       }
     </script>
     <script type="text/javascript">
@@ -90,6 +123,11 @@
 				// adjust text size
 			$('.content-contain').css('font-size', (window_width/22) + 'px');
 			$('.content-contain .sub-content').css('font-size', (window_width*.015)+'px')
+			$('#second-promo form').css('bottom', (window_width/1280)*5+'%');
+			$('#second-promo .banner-promo').css('width', (window_width/1280)*700+'px');
+			$('#second-promo .banner-promo').css('height', (window_width/1280)*80+'px');
+			$('#second-promo .banner-promo').css('line-height', (window_width/1280)*40+'px');
+			$('#second-promo .banner-promo').css('font-size', (window_width/1280)*36.9+'px');
 		}
 	</script>
 	<!--[if lt IE 9]>
@@ -116,7 +154,7 @@
 				<ul>
 					Lolli and Pops - Tulsa
 					<li>Woodland Hills Mall</li>
-					<li>7201 South Memorial Drive</li>
+					<li>7021 South Memorial Drive</li>
 					<li>918-250-9916</li>
 				</ul>
 				<ul>
@@ -124,7 +162,20 @@
 					<li>Penn Square Mall</li>
 					<li>1901 Northwest Expy</li>
 					<li>405-848-3300</li>
+				</ul>	
+				<ul>
+					Lolli and Pops - Chicago
+					<li>Fashion Outlets</li>
+					<li>5220 Fashion Outlet Way</li>
+					<li>847-268-4345</li>
 				</ul>			
+				<ul>
+					Lolli and Pops - Roseville
+					<li>Westfield Galleria</li>
+					<li>1151 Galleria Blvd</li>
+					<li>916-594-0129</li>
+				</ul>
+
 			</div>
 			<div id='sweets' class='nav-item small-12 columns'>
 				SWEETS
@@ -148,10 +199,10 @@
 
 	<!-- callout -->
 	<a href='http://www.barandbean.com'>
-	<div class='panel' id='barbean' style='position:fixed; top:100px; right: 0px; height:100px; width:275px; z-index:25; background-color:rgb(246, 148, 114); font-family:"Verlag-Black"; color:white; font-size: 17px;box-shadow: 1px 1px 7px #707070;'>
+	<!--<div class='panel' id='barbean' style='position:fixed; top:100px; right: 0px; height:100px; width:275px; z-index:25; background-color:rgb(246, 148, 114); font-family:"Verlag-Black"; color:white; font-size: 17px;box-shadow: 1px 1px 7px #707070;'>
 		Visit our online chocolate store, <br>
 		<div style='background: url(../images/layers/logo_barbean.png) center no-repeat;background-size:contain;height:38px'></div>
-	</div>
+	</div>-->
 	</a>
 
 	<div id='nav'>
@@ -174,22 +225,303 @@
 	<!-- Section #1 / Intro -->
 	<section id="first" class="story" data-speed="8" data-type="background">   
 			<img src="images/layers/logo_white.png" alt="tutorial-title" width="500" height="135" />
+			<img id='arrow' src="images/Arrow.png" alt="arrow" width="300" height="75" />
 	</section>
 
-	<!-- Section #2 / Background Only -->
-	<section id="second" class="story" data-speed="4" data-type="background" data-offsetY="0">
-		<div class='content-contain about'>
-			<p>Lolli and Pops is </p>
-			<p>a small collection </p>
-			<p>of candy stores </p>
-			<p>with a simple goal: </p>
-			<p>to make every day delicious.</p>
+	<!-- Section #1b / Newsletter signup -->
+	<!--<section id="newsletter-signup" class="minor-story" data-speed="8" data-type="background">   
+		<link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+		<style type="text/css">
+			#mc_embed_signup{margin-top:15px;background:black; clear:left; font:14px Helvetica,Arial,sans-serif; float:left;}
+			.email {margin-left:5% !important;margin-right:10px !important; font-size:30px !important; float:left !important;}
+			#mc-embedded-subscribe {height:69px !important;font-family:'Verlag-Black'; font-size:15px;}
+			/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+			   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+		</style>
+
+		<div id="mc_embed_signup" class='row'>
+			<form action="http://LolliandPops.us7.list-manage1.com/subscribe/post?u=0cc46393237ab4d571b069d41&amp;id=892a516f5d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate style='max-width:200em'>
+				<input type="email" value="" name="EMAIL" class="large-9 columns email" id="mce-EMAIL" placeholder="#sharethesweetness with email from Lolli and Pops" required>
+				<div class="clear large-2 columns"><input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+			</form>
 		</div>
+	</section>-->
+
+	<!-- Begin MailChimp Signup Form -->
+	<link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		#mc_embed_signup{position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,.8);display:none;z-index:10000; }
+		#mc_embed_signup form{position:fixed; top:10%; left:50%; width:50%; margin-left:-25%; font:normal 100% Helvetica,Arial,sans-serif; font-size:14px; border-radius:4px; border:none; padding:10px 20px; background-color:#fff; color:#000; text-align:left;max-height:400px;overflow-y:auto;overflow-x:hidden;}
+		#mc_embed_signup a.mc_embed_close{background:transparent url(http://downloads.mailchimp.com/img/closebox.png) no-repeat; display:block; height:30px; width:30px; text-indent:-999em; position:absolute; top:-2px; right:-3px; display:none; }
+		/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+		   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+	</style>
+	<div id="mc_embed_signup">
+	<form action="http://LolliandPops.us7.list-manage.com/subscribe/post?u=0cc46393237ab4d571b069d41&amp;id=deb1a2e0a4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate style='text-align:center;border: 10px solid rgb(181,159,90);font-family:"Verlag-Black";'>
+		<img src="images/layers/stamp.png" style="width: 10%;">
+		<h2 style='font-family:"Verlag-Black";letter-spacing:2px'>#sharethesweetness WITH US!</h2>
+		<h3 style='font-family:"Verlag-Black";letter-spacing:2px'>SIGN UP FOR OUR NEWSLETTER</h3>
+	<div class="mc-field-group" style='width:100%'>
+		<label for="mce-EMAIL">Email Address </label>
+		<input style='width:100%;' type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+	</div>
+	<a href="#" id="mc_embed_close" class="mc_embed_close">Close</a>	<div id="mce-responses" class="clear">
+			<div class="response" id="mce-error-response" style="display:none"></div>
+			<div class="response" id="mce-success-response" style="display:none"></div>
+		</div>	<div class="clear"><input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+	</form>
+	</div>
+	<script type="text/javascript">
+	var fnames = new Array();var ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';
+	try {
+	    var jqueryLoaded=jQuery;
+	    jqueryLoaded=true;
+	} catch(err) {
+	    var jqueryLoaded=false;
+	}
+	var head= document.getElementsByTagName('head')[0];
+	if (!jqueryLoaded) {
+	    var script = document.createElement('script');
+	    script.type = 'text/javascript';
+	    script.src = '//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
+	    head.appendChild(script);
+	    if (script.readyState && script.onload!==null){
+	        script.onreadystatechange= function () {
+	              if (this.readyState == 'complete') mce_preload_check();
+	        }    
+	    }
+	}
+
+	var err_style = '';
+	try{
+	    err_style = mc_custom_error_style;
+	} catch(e){
+	    err_style = '#mc_embed_signup input.mce_inline_error{border-color:#6B0505;} #mc_embed_signup div.mce_inline_error{margin: 0 0 1em 0; padding: 5px 10px; background-color:#6B0505; font-weight: bold; z-index: 1; color:#fff;}';
+	}
+	var head= document.getElementsByTagName('head')[0];
+	var style= document.createElement('style');
+	style.type= 'text/css';
+	if (style.styleSheet) {
+	  style.styleSheet.cssText = err_style;
+	} else {
+	  style.appendChild(document.createTextNode(err_style));
+	}
+	head.appendChild(style);
+	setTimeout('mce_preload_check();', 250);
+
+	var mce_preload_checks = 0;
+	function mce_preload_check(){
+	    if (mce_preload_checks>40) return;
+	    mce_preload_checks++;
+	    try {
+	        var jqueryLoaded=jQuery;
+	    } catch(err) {
+	        setTimeout('mce_preload_check();', 250);
+	        return;
+	    }
+	    var script = document.createElement('script');
+	    script.type = 'text/javascript';
+	    script.src = 'http://downloads.mailchimp.com/js/jquery.form-n-validate.js';
+	    head.appendChild(script);
+	    try {
+	        var validatorLoaded=jQuery("#fake-form").validate({});
+	    } catch(err) {
+	        setTimeout('mce_preload_check();', 250);
+	        return;
+	    }
+	    mce_init_form();
+	}
+	function mce_init_form(){
+	    jQuery(document).ready( function($) {
+	      var options = { errorClass: 'mce_inline_error', errorElement: 'div', onkeyup: function(){}, onfocusout:function(){}, onblur:function(){}  };
+	      var mce_validator = $("#mc-embedded-subscribe-form").validate(options);
+	      $("#mc-embedded-subscribe-form").unbind('submit');//remove the validator so we can get into beforeSubmit on the ajaxform, which then calls the validator
+	      options = { url: 'http://LolliandPops.us7.list-manage.com/subscribe/post-json?u=0cc46393237ab4d571b069d41&id=deb1a2e0a4&c=?', type: 'GET', dataType: 'json', contentType: "application/json; charset=utf-8",
+	                    beforeSubmit: function(){
+	                        $('#mce_tmp_error_msg').remove();
+	                        $('.datefield','#mc_embed_signup').each(
+	                            function(){
+	                                var txt = 'filled';
+	                                var fields = new Array();
+	                                var i = 0;
+	                                $(':text', this).each(
+	                                    function(){
+	                                        fields[i] = this;
+	                                        i++;
+	                                    });
+	                                $(':hidden', this).each(
+	                                    function(){
+	                                        var bday = false;
+	                                        if (fields.length == 2){
+	                                            bday = true;
+	                                            fields[2] = {'value':1970};//trick birthdays into having years
+	                                        }
+	                                    	if ( fields[0].value=='MM' && fields[1].value=='DD' && (fields[2].value=='YYYY' || (bday && fields[2].value==1970) ) ){
+	                                    		this.value = '';
+										    } else if ( fields[0].value=='' && fields[1].value=='' && (fields[2].value=='' || (bday && fields[2].value==1970) ) ){
+	                                    		this.value = '';
+										    } else {
+										        if (/\[day\]/.test(fields[0].name)){
+	    	                                        this.value = fields[1].value+'/'+fields[0].value+'/'+fields[2].value;									        
+										        } else {
+	    	                                        this.value = fields[0].value+'/'+fields[1].value+'/'+fields[2].value;
+		                                        }
+		                                    }
+	                                    });
+	                            });
+	                        $('.phonefield-us','#mc_embed_signup').each(
+	                            function(){
+	                                var fields = new Array();
+	                                var i = 0;
+	                                $(':text', this).each(
+	                                    function(){
+	                                        fields[i] = this;
+	                                        i++;
+	                                    });
+	                                $(':hidden', this).each(
+	                                    function(){
+	                                        if ( fields[0].value.length != 3 || fields[1].value.length!=3 || fields[2].value.length!=4 ){
+	                                    		this.value = '';
+										    } else {
+										        this.value = 'filled';
+		                                    }
+	                                    });
+	                            });
+	                        return mce_validator.form();
+	                    }, 
+	                    success: mce_success_cb
+	                };
+	      $('#mc-embedded-subscribe-form').ajaxForm(options);
+	      
+	              $('#mc_embed_signup').hide();
+	        cks = document.cookie.split( ';' );
+	        var show=true;
+	        for(i=0;i<cks.length;i++){
+	            parts = cks[i].split('=');
+	            if( parts[0].indexOf('MCEvilPopupClosed')!= -1 ) show = false;
+	        }
+	        if (show){
+	            $('#mc_embed_signup a.mc_embed_close').show();
+	            setTimeout( function(){ $('#mc_embed_signup').fadeIn();} , 500);
+		        $('#mc_embed_signup a.mc_embed_close').click(function(){ mcEvilPopupClose();});
+	        }
+
+	        $(document).keydown(function(e){
+	            if (e == null) { 
+	              keycode = event.keyCode;
+	            } else { 
+	              keycode = e.which;
+	            }
+	            if(keycode == 27){
+	                mcEvilPopupClose();
+	            }
+	        });
+
+	        function mcEvilPopupClose(){
+	            $('#mc_embed_signup').hide();
+	            var now = new Date();
+	            var expires_date = new Date( now.getTime() + 31536000000 );
+	            document.cookie = 'MCEvilPopupClosed=yes;expires=' + expires_date.toGMTString()+';path=/';
+	        }
+
+	    });
+	}
+	function mce_success_cb(resp){
+	    $('#mce-success-response').hide();
+	    $('#mce-error-response').hide();
+	    if (resp.result=="success"){
+	        $('#mce-'+resp.result+'-response').show();
+	        $('#mce-'+resp.result+'-response').html(resp.msg);
+	        $('#mc-embedded-subscribe-form').each(function(){
+	            this.reset();
+	    	});
+	    } else {
+	        var index = -1;
+	        var msg;
+	        try {
+	            var parts = resp.msg.split(' - ',2);
+	            if (parts[1]==undefined){
+	                msg = resp.msg;
+	            } else {
+	                i = parseInt(parts[0]);
+	                if (i.toString() == parts[0]){
+	                    index = parts[0];
+	                    msg = parts[1];
+	                } else {
+	                    index = -1;
+	                    msg = resp.msg;
+	                }
+	            }
+	        } catch(e){
+	            index = -1;
+	            msg = resp.msg;
+	        }
+	        try{
+	            if (index== -1){
+	                $('#mce-'+resp.result+'-response').show();
+	                $('#mce-'+resp.result+'-response').html(msg);            
+	            } else {
+	                err_id = 'mce_tmp_error_msg';
+	                html = '<div id="'+err_id+'" style="'+err_style+'"> '+msg+'</div>';
+	                
+	                var input_id = '#mc_embed_signup';
+	                var f = $(input_id);
+	                if (ftypes[index]=='address'){
+	                    input_id = '#mce-'+fnames[index]+'-addr1';
+	                    f = $(input_id).parent().parent().get(0);
+	                } else if (ftypes[index]=='date'){
+	                    input_id = '#mce-'+fnames[index]+'-month';
+	                    f = $(input_id).parent().parent().get(0);
+	                } else {
+	                    input_id = '#mce-'+fnames[index];
+	                    f = $().parent(input_id).get(0);
+	                }
+	                if (f){
+	                    $(f).append(html);
+	                    $(input_id).focus();
+	                } else {
+	                    $('#mce-'+resp.result+'-response').show();
+	                    $('#mce-'+resp.result+'-response').html(msg);
+	                }
+	            }
+	        } catch(e){
+	            $('#mce-'+resp.result+'-response').show();
+	            $('#mce-'+resp.result+'-response').html(msg);
+	        }
+	    }
+	}
+
+	</script>
+	<!--End mc_embed_signup-->
+
+	<!-- Section #2 / Background Only -->
+	<section id="second" class="story" data-speed="4" data-type="background" data-offsetY="0" style='padding:30px;text-align:center;letter-spacing: 2px; padding-left: 4%; padding-top:10%; width: 70%; height: 55%; font-family:"Verlag-Black"; font-size:35px; color:rgb(181,152,90); font-size:60px;'>
+		<p>WE ARE </p>
+		<p>A SMALL COLLECTION </p>
+		<p>OF CANDY SHOPS </p>
+		<p>WITH A SIMPLE GOAL: </p>
+		<p>TO MAKE THE </p>
+		<p>WORLD SWEETER. </p>
+	</section>
+
+	<!-- Section #2b / Background Only -->
+	<section id="second-promo" class="story" data-speed="4" data-type="background" data-offsetY="200">
+		<div class='banner-promo' style='color:white;text-align:center;width:500px;margin:0 auto;height:100px;line-height:100px;font-family:"Verlag-Black";font-size:38px;margin-top:12%;letter-spacing:3px;'>
+			<p>OUR GOURMET</p>
+			<p>CHOCOLATE BOXES</p>
+			<p>HAVE ARRIVED!</p>
+		</div>
+		<a href='http://www.barandbean.com/collections/lolli-pops'>
+			<div id='buy-now-button'>
+				<p id='buy-now-text'>BUY NOW</p>
+			</div>
+		</a>
+		<br>
 	</section>
 
 	<!-- Section #3 / Location Only -->
 	<section id="loc-first" class="location" data-speed="4" data-type="background">
-			<span class='store-city'>TULSA </span><span class='store-address'>WOODLAND HILLS MALL 7201 South Memorial Drive (near food court) | 918-250-9916</span>
+			<span class='store-city'>TULSA, OK </span><span class='store-address'>WOODLAND HILLS MALL 7021 South Memorial Drive (near food court) | 918-250-9916</span>
 			<span class='expand'><img src="images/layers/buttonv2.png" width='50' height='50'></span>
 	</section>
 
@@ -198,15 +530,39 @@
 
 	<!-- Section #4 / Location Only -->
 	<section id="loc-second" class="location" data-speed="4" data-type="background">
-			<span class='store-city'>OKLAHOMA CITY </span><span class='store-address'>PENN SQUARE MALL 1901 Northwest Expy | 405-848-3300</span>
+			<span class='store-city'>OKLAHOMA CITY, OK </span><span class='store-address'>PENN SQUARE MALL 1901 Northwest Expy | 405-848-3300</span>
 			<span class='expand'><img src="images/layers/buttonv1.png" width='50' height='50'></span>
 	</section>
 	
 	<div id='okc_map'><div class='store-detail'></div><div id='okc_map_canvas' style="width: 100%; height: 100%"></div></div>
 	<div class='rect-filler'></div>
 
-	<!-- Section #5 / Brands section -->
-	<section id="third" class="story" data-speed="4" data-type="background" data-offsetY="295">    	
+	<!-- Section #5 / Location Only -->
+	<section id="loc-third" class="location" data-speed="4" data-type="background">
+		<span class='store-city'>CHICAGO, IL </span><span class='store-address'>FASHION OUTLETS 5220 Fashion Outlet Way | 847-268-4345</span>
+		<span class='expand'><img src="images/layers/buttonv3.png" width='50' height='50'></span>
+	</section>
+
+	<div id='chicago_map'><div class='store-detail'></div><div id='chicago_map_canvas' style="width: 100%; height: 100%"></div></div>
+	<div class='rect-filler-chicago'></div>
+
+	<!-- Section #6 / Location Only -->
+	<section id="loc-fourth" class="location" data-speed="4" data-type="background">
+		<span class='store-city'>ROSEVILLE, CA </span><span class='store-address'>WESTFIELD GALLERIA 1151 Galleria Blvd | 916-594-0129 </span>
+		<span class='expand'><img src="images/layers/buttonv3.png" width='50' height='50'></span>
+	</section>
+
+	<div id='roseville_map'><div class='store-detail'></div><div id='roseville_map_canvas' style="width: 100%; height: 100%"></div></div>
+	<div class='rect-filler-roseville'></div>
+
+	<!-- Section #7 / Location Only -->
+	<section id="loc-fifth" class="location" data-speed="4" data-type="background">
+		<span class='store-city'>GLENDALE, CA </span><span class='store-address'>COMING IN 2014!</span>
+		<span class='expand'><img src="images/layers/buttonv3.png" width='50' height='50'></span>
+	</section>
+
+	<!-- Section #8 / Brands section -->
+	<section id="third" class="story" data-speed="4" data-type="background" data-offsetY="595">    	
 		<div class='content-contain'>
 			<p>We're purveyors of sweetness, </p>
 			<p>which means we carry the </p>
