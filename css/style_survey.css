@@ -1,0 +1,81 @@
+@font-face {font-family:Verlag; src: url(../fonts/VerlagCond-Black.otf);}
+@font-face {font-family:Verlag-Light; src: url(../fonts/Verlag-Light.otf);}
+@font-face {font-family:Verlag-Black; src: url(../fonts/Verlag-Black.otf);}
+@font-face {font-family:Verlag-Bold; src: url(../fonts/Verlag-Bold.otf);}
+/*@font-face {font-family:Verlag-Book; src: url(../fonts/Verlag-Book.otf);}*/
+
+.ss-form-title{
+	font-family: 'Verlag-Black'
+}
+
+.ss-form-desc {
+	font-family: 'Verlag-Light';
+	text-align: center;
+}
+
+.ss-required-asterisk {
+	font-family: 'Verlag-Light';
+	text-align: center;
+}
+
+/* questions */
+.ss-q-title {
+	font-family: 'Verlag-Black';
+	font-size: 20px;
+	color: rgb(181, 152, 90);
+	letter-spacing: 2px;
+}
+
+.ss-q-title label {
+	display: none;
+}
+
+.ss-choice-label {
+	font-family: 'Verlag-Bold';
+}
+
+.ss-choice-item label {
+	font-family: 'Verlag-Bold';
+}
+
+
+.required-message {
+	display:none;
+}
+
+.ss-form-entry textarea {
+	width: 600px;
+}
+
+.ss-form-entry input[type="text"] {
+	width:350px;
+}
+
+form {
+	padding: 40px !important;
+}
+
+#survey-container {
+	background: white;
+	background: url(../images/survey_background.jpg) 100% 100% no-repeat;
+	background-size: 150%;
+}
+
+.ss-form-entry ul {
+	padding-left: 20px;
+	list-style-type: none;
+}
+
+input:invalid, textarea:invalid {
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+#navigation-table {
+	border:none;
+	background: none;
+}
+
+.ss-footer {
+	display:none;
+}

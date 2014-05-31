@@ -70,6 +70,9 @@ article h2 { font-family: 'Courier'; font-size: 60px; margin: 25px 0; line-heigh
 #loc-third { cursor: pointer; background-color: #F16464; }
 #loc-fourth { cursor: pointer; background-color: #F69472; }
 #loc-fifth { cursor: pointer; background-color: #FCBF49 }
+#loc-sixth { cursor: pointer; background-color: #99C9FF }
+#loc-seventh { cursor: pointer; background-color: #FFB3AB }
+#loc-eigth { cursor: pointer; background-color: #b5e3d8 }
 
 /* Maps */
 #okc_map {height:300px; position: relative; width: 100%; display:none;}
@@ -80,10 +83,19 @@ article h2 { font-family: 'Courier'; font-size: 60px; margin: 25px 0; line-heigh
 #chicago_map #chicago_map_canvas {width: 100%;height:auto;position: absolute;}
 #roseville_map {height:300px; position:relative; width: 100%; display:none;}
 #roseville_map #roseville_map_canvas {width: 100%;height:auto;position: absolute;}
+#stonebrier_map {height:300px; position:relative; width: 100%; display:none;}
+#stonebrier_map #stonebrier_map_canvas {width: 100%;height:auto;position: absolute;}
+#lacantera_map {height:300px; position:relative; width: 100%; display:none;}
+#lacantera_map #lacantera_map_canvas {width: 100%;height:auto;position: absolute;}
+#glendale_map {height:300px; position:relative; width: 100%; display:none;}
+#glendale_map #glendale_map_canvas {width: 100%;height:auto;position: absolute;}
 #tulsa_map .store-detail {font-family: 'Verlag-Book'; background: url(../images/layers/store.png) 50% 0 no-repeat; background-size:80%;position:absolute;top: 20%;left: 5%;height: auto;width: 25%;z-index: 10;}
 #okc_map .store-detail {font-family: 'Verlag-Book'; background: url(../images/layers/store_okc.jpg) 50% 0 no-repeat; background-size:80%;position:absolute;top: 20%;left: 5%;height: auto;width: 25%;z-index: 10;}
 #chicago_map .store-detail {font-family: 'Verlag-Book'; background: url(../images/layers/store_okc.jpg) 50% 0 no-repeat; background-size:80%;position:absolute;top: 20%;left: 5%;height: auto;width: 25%;z-index: 10;}
-#roseville_map .store-detail {font-family: 'Verlag-Book'; background: url(../images/layers/store_okc.jpg) 50% 0 no-repeat; background-size:80%;position:absolute;top: 20%;left: 5%;height: auto;width: 25%;z-index: 10;}
+#roseville_map .store-detail {font-family: 'Verlag-Book'; background: url(../images/layers/store_roseville.jpg) 50% 0 no-repeat; background-size:80%;position:absolute;top: 20%;left: 5%;height: auto;width: 25%;z-index: 10;}
+#stonebrier_map .store-detail {font-family: 'Verlag-Book'; background: url(../images/layers/store_okc.jpg) 50% 0 no-repeat; background-size:80%;position:absolute;top: 20%;left: 5%;height: auto;width: 25%;z-index: 10;}
+#lacantera_map .store-detail {font-family: 'Verlag-Book'; background: url(../images/layers/store_lacantera.jpg) 50% 0 no-repeat; background-size:80%;position:absolute;top: 20%;left: 5%;height: auto;width: 25%;z-index: 10;}
+#glendale_map .store-detail {font-family: 'Verlag-Book'; background: url(../images/layers/store_okc.jpg) 50% 0 no-repeat; background-size:80%;position:absolute;top: 20%;left: 5%;height: auto;width: 25%;z-index: 10;}
 .store-city {font-family: 'Verlag-Black'; color: rgb(246,236,215); padding-left:2%;}
 .store-address{font-family: 'Verlag-Book'; color: rgb(246,236,215); }
 .expand {position:absolute; font-family:'Verlag-Black';top:8%;right:3%;}
@@ -91,7 +103,9 @@ article h2 { font-family: 'Courier'; font-size: 60px; margin: 25px 0; line-heigh
 .rect-filler {height:5px;width:100%;display:none;background:#A2D8CB;}
 .rect-filler-chicago {height:5px;width:100%;display:none;background:#F16464;}
 .rect-filler-roseville {height:5px;width:100%;display:none;background:#F69472;}
-
+.rect-filler-stonebrier {height:5px;width:100%;display:none;background:#FCBF49;}
+.rect-filler-lacantera {height:5px;width:100%;display:none;background:#99C9FF;}
+.rect-filler-glendale {height:5px;width:100%;display:none;background:#FFB3AB;}
 
 /* Introduction */
 #first .smashinglogo { background: url(../images/smashing-logo.png) 50% 100px no-repeat fixed; min-height: 1000px; padding: 0; margin: 0; width: 100%; max-width: 1920px; position: relative; margin: 0 auto; }

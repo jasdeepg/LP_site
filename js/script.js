@@ -25,6 +25,10 @@ $(document).ready(function(){
 	$tulsa = $('#tulsa_map');
 	$chicago = $('#chicago_map');
 	$roseville = $('#roseville_map');
+	$stonebrier = $('#stonebrier_map');
+	$lacantera = $('#lacantera_map');
+	$glendale = $('#glendale_map');
+
 
 	// check if components have been adjusted for screen resolution
 	if (flag==0){	
@@ -191,15 +195,66 @@ $(document).ready(function(){
 	})
 
 	// animate store location panels
+	$('#loc-seventh').click(function(){
+		$glendale.animate({
+		    height: 'toggle'
+		  }, 250, function() {
+		    // Animation complete.
+		    $('.rect-filler-glendale').show();
+		    $lacantera.hide();
+		    $tulsa.hide();
+		    $okc.hide();
+		    $chicago.hide();
+		    $roseville.hide();
+		    $stonebrier.hide();
+		    initialize();
+		  });
+	})
+
+	$('#loc-sixth').click(function(){
+		$lacantera.animate({
+		    height: 'toggle'
+		  }, 250, function() {
+		    // Animation complete.
+		    $('.rect-filler-lacantera').show();
+		    $glendale.hide();
+		    $tulsa.hide();
+		    $okc.hide();
+		    $chicago.hide();
+		    $roseville.hide();
+		    $stonebrier.hide();
+		    initialize();
+		  });
+	})
+
+	$('#loc-fifth').click(function(){
+		$stonebrier.animate({
+		    height: 'toggle'
+		  }, 250, function() {
+		    // Animation complete.
+		    $('.rect-filler-stonebrier').show();
+		    $glendale.hide();
+		    $tulsa.hide();
+		    $okc.hide();
+		    $chicago.hide();
+		    $roseville.hide();
+		    $lacantera.hide()
+		    initialize();
+		  });
+	})
+
 	$('#loc-fourth').click(function(){
 		$roseville.animate({
 		    height: 'toggle'
 		  }, 250, function() {
 		    // Animation complete.
 		    $('.rect-filler-roseville').show();
+		    $glendale.hide();
 		    $tulsa.hide();
 		    $okc.hide();
 		    $chicago.hide();
+		    $stonebrier.hide();
+		    $lacantera.hide()
 		    initialize();
 		  });
 	})
@@ -210,9 +265,12 @@ $(document).ready(function(){
 		  }, 250, function() {
 		    // Animation complete.
 		    $('.rect-filler-chicago').show();
+		    $glendale.hide();
 		    $tulsa.hide();
 		    $okc.hide();
 		    $roseville.hide();
+		    $stonebrier.hide();
+		    $lacantera.hide()
 		    initialize();
 		  });
 	})	
@@ -223,9 +281,12 @@ $(document).ready(function(){
 		  }, 250, function() {
 		    // Animation complete.
 		    $('.rect-filler').show();
+		    $glendale.hide();
 		    $tulsa.hide();
 		    $chicago.hide();
 		    $roseville.hide();
+		    $stonebrier.hide();
+		    $lacantera.hide()
 		    initialize();
 		  });
 	})	
@@ -236,9 +297,12 @@ $(document).ready(function(){
 		  }, 250, function() {
 		    // Animation complete.
 		    $('.rect-filler').hide();
+		    $glendale.hide();
 		    $okc.hide();
 		    $chicago.hide();
 		    $roseville.hide();
+		    $stonebrier.hide();
+		    $lacantera.hide()
 		    initialize();
 		});
 	})

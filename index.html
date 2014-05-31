@@ -42,6 +42,9 @@
 		var myLatlng2 = new google.maps.LatLng(36.063098, -95.881269);
 		var myLatlng3 = new google.maps.LatLng(41.978890, -87.865723);
 		var myLatlng4 = new google.maps.LatLng(38.773442, -121.269285);
+		var myLatlng5 = new google.maps.LatLng(33.098644, -96.811106);
+		var myLatlng6 = new google.maps.LatLng(29.592180, -98.613797);
+		var myLatlng7 = new google.maps.LatLng(34.145122, -118.258875);
 
         var mapOptions = {
           center: myLatlng,
@@ -63,6 +66,27 @@
         };
         var mapOptions4 = {
           center: myLatlng4,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+        };
+
+        var mapOptions5 = {
+          center: myLatlng5,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+        };
+
+        var mapOptions6 = {
+          center: myLatlng6,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          scrollwheel: false,
+        };
+
+        var mapOptions7 = {
+          center: myLatlng7,
           zoom: 15,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           scrollwheel: false,
@@ -102,6 +126,33 @@
 		    position: myLatlng4,
 		    map: map4,
 		    title:"Lolli and Pops - Roseville"
+		});
+
+		var map5 = new google.maps.Map(document.getElementById('stonebrier_map_canvas'), 
+        	mapOptions5);
+
+        var marker5 = new google.maps.Marker({
+		    position: myLatlng5,
+		    map: map5,
+		    title:"Lolli and Pops - Stonebrier"
+		});
+
+		var map6 = new google.maps.Map(document.getElementById('lacantera_map_canvas'), 
+        	mapOptions6);
+
+        var marker6 = new google.maps.Marker({
+		    position: myLatlng6,
+		    map: map6,
+		    title:"Lolli and Pops - La Cantera"
+		});
+
+		var map7 = new google.maps.Map(document.getElementById('glendale_map_canvas'), 
+        	mapOptions7);
+
+        var marker7 = new google.maps.Marker({
+		    position: myLatlng7,
+		    map: map7,
+		    title:"Lolli and Pops - Glendale"
 		});
 
       }
@@ -155,27 +206,55 @@
 					Lolli and Pops - Tulsa
 					<li>Woodland Hills Mall</li>
 					<li>7021 South Memorial Drive</li>
+					<li>Tulsa, OK 74133</li>
 					<li>918-250-9916</li>
 				</ul>
 				<ul>
 					Lolli and Pops - Oklahoma City
 					<li>Penn Square Mall</li>
 					<li>1901 Northwest Expy</li>
+					<li>Oklahoma City, OK 73118</li>
 					<li>405-848-3300</li>
 				</ul>	
 				<ul>
 					Lolli and Pops - Chicago
 					<li>Fashion Outlets</li>
 					<li>5220 Fashion Outlet Way</li>
+					<li>Rosemont, IL 60018</li>
 					<li>847-268-4345</li>
 				</ul>			
 				<ul>
 					Lolli and Pops - Roseville
 					<li>Westfield Galleria</li>
 					<li>1151 Galleria Blvd</li>
+					<li>Roseville, CA 95678</li>
 					<li>916-594-0129</li>
-				</ul>
-
+				</ul>	
+				<ul>
+					Lolli and Pops - Frisco
+					<li>Stonebriar Centre Mall</li>
+					<li>2601 Preston Road</li>
+					<li>Frisco, TX 75034</li>
+					<li>469-362-5707</li>
+				</ul>	
+				<ul>
+					Lolli and Pops - Glendale
+					<li>Glendale Galleria</li>
+					<li>1128 Glendale Galleria</li>
+					<li>Glendale, CA 91210</li>
+					<li>818-546-1813</li>
+				</ul>	
+				<ul>
+					Lolli and Pops - San Antonio
+					<li>The Shops at La Cantera</li>
+					<li>15900 La Cantera Parkway</li>
+					<li>San Antonio, TX 78256</li>
+					<li>210-561-5707</li>
+				</ul>		
+				<ul>
+					Lolli and Pops - Tysons Corner
+					<li>Coming to Tysons Corner, VA in 2014!</li>
+				</ul>		
 			</div>
 			<div id='sweets' class='nav-item small-12 columns'>
 				SWEETS
@@ -504,7 +583,7 @@
 		<p>WORLD SWEETER. </p>
 	</section>
 
-	<!-- Section #2b / Background Only -->
+	<!-- Section #2b / Background Only
 	<section id="second-promo" class="story" data-speed="4" data-type="background" data-offsetY="200">
 		<div class='banner-promo' style='color:white;text-align:center;width:500px;margin:0 auto;height:100px;line-height:100px;font-family:"Verlag-Black";font-size:38px;margin-top:12%;letter-spacing:3px;'>
 			<p>OUR GOURMET</p>
@@ -517,7 +596,7 @@
 			</div>
 		</a>
 		<br>
-	</section>
+	</section>-->
 
 	<!-- Section #3 / Location Only -->
 	<section id="loc-first" class="location" data-speed="4" data-type="background">
@@ -557,25 +636,40 @@
 
 	<!-- Section #7 / Location Only -->
 	<section id="loc-fifth" class="location" data-speed="4" data-type="background">
-		<span class='store-city'>GLENDALE, CA </span><span class='store-address'>COMING IN 2014!</span>
+		<span class='store-city'>FRISCO, TX </span><span class='store-address'>STONEBRIAR CENTRE MALL 2601 Preston Road | 469-362-5707</span>
+		<span class='expand'><img src="images/layers/buttonv3.png" width='50' height='50'></span>
+	</section>
+
+	<div id='stonebrier_map'><div class='store-detail'></div><div id='stonebrier_map_canvas' style="width: 100%; height: 100%"></div></div>
+	<div class='rect-filler-stonebrier'></div>
+
+	<!-- Section #8 / Location Only -->
+	<section id="loc-sixth" class="location" data-speed="4" data-type="background">
+		<span class='store-city'>SAN ANTONIO, TX </span><span class='store-address'>THE SHOPS AT LA CANTERA 15900 La Cantera Parkway | 210-561-7858</span>
+		<span class='expand'><img src="images/layers/buttonv3.png" width='50' height='50'></span>
+	</section>
+
+	<div id='lacantera_map'><div class='store-detail'></div><div id='lacantera_map_canvas' style="width: 100%; height: 100%"></div></div>
+	<div class='rect-filler-lacantera'></div>
+
+	<!-- Section #9 / Location Only -->
+	<section id="loc-seventh" class="location" data-speed="4" data-type="background">
+		<span class='store-city'>GLENDALE, CA </span><span class='store-address'>GLENDALE GALLERIA 1128 Glendale Galleria | 818-546-1813</span>
+		<span class='expand'><img src="images/layers/buttonv3.png" width='50' height='50'></span>
+	</section>
+
+	<div id='glendale_map'><div class='store-detail'></div><div id='glendale_map_canvas' style="width: 100%; height: 100%"></div></div>
+	<div class='rect-filler-glendale'></div>
+
+	<!-- Section #10 / Location Only -->
+	<section id="loc-eigth" class="location" data-speed="4" data-type="background">
+		<span class='store-city'>TYSONS CORNER, VA </span><span class='store-address'>COMING IN 2014!</span>
 		<span class='expand'><img src="images/layers/buttonv3.png" width='50' height='50'></span>
 	</section>
 
 	<!-- Section #8 / Brands section -->
-	<section id="third" class="story" data-speed="4" data-type="background" data-offsetY="595">    	
-		<div class='content-contain'>
-			<p>We're purveyors of sweetness, </p>
-			<p>which means we carry the </p>
-			<p>most delectable selection </p>
-			<p>of candies and confections </p>
-			<p>in the world. </p>
-			<div class='sub-content'>HERE ARE JUST SOME OF OUR BRANDS:
-				<p>Kopper's, Albanese, Fran's Chocolate, Ritual Chocolate, TCHO,</p>
-				<p>Vosges, Recchuiti, Divine Delights (Petits fours), Sweet Shop,</p>
-				<p>Cadbury, Chocolate, Santander, Reber, Asher's, Jcoco, Hachez,</p>
-				<p>Meiji, Pernigotti, Scharffen Berger, and many more.</p>
-			</div>
-		</div>
+	<section id="third" class="story-alt" data-speed="4" data-type="background" data-offsetY="300">    	
+		<img src="images/PurveyorsStatement.png" style='height:auto;width:100%' alt="We are purveyors of sweetness. We measure the quality of our sweets not only by how delicious they are, but by the memories they stir loose and the smiles they bring. Because sweetness comes from more than just sugar and if you're going to indulge in a treat it better be truly special.">
 	</section>	
 	
 	<!-- Section #6 / Publicity Video -->
